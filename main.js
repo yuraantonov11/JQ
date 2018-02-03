@@ -14,15 +14,16 @@ class JQuery {
     static isElement(o){
         return (
             typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
-                o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName==="string"
+            o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName==="string"
         );
     }
 
     hide(){
-        this.elements.map(function(elem) {
-            elem.style.display = 'none';
-        });
-        return this;
+        this.elements.style.display = 'none';
+        // this.elements.map(function(elem) {
+        //     elem.style.display = 'none';
+        // });
+        // return this;
     }
     show(){
         this.elements.map(function(elem) {
@@ -55,7 +56,10 @@ class JQuery {
             return getComputedStyle(this.elements)[params];
         }
     }
-    // $.css('color')
+
+    addClass(newClass){
+        this.elements.classList.add(newClass);
+    }
 
 
 }
