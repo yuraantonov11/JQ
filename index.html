@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<p>Lorem ipsum dolor.</p>
+<p>Lorem ipsum dolor.</p>
+<p>Lorem ipsum dolor.</p>
+<p>Lorem ipsum dolor.</p>
+
+<script src="main.js"></script>
+<script>
+
+    // $('p').click(function(element) {
+    //     console.log(this);
+    //     console.log(element);
+    //     // $(this); === element
+    //     element.style.display = 'none';
+    //     element.style.backgroundColor = 'red';
+    //     element.style.color = 'green';
+    //     element.innerHTML = 'clicked';
+    // });
+    $('p').click(function(elem) {
+        console.log(elem.css('fontSize'));
+    })
+
+    // document.body.addEventListener('click', function(event) {
+    //     let target = event.target;
+    //     if(target.tagName === 'P'){
+    //         target.style.display = 'none';
+    //         return;
+    //     }
+    // })
+</script>
+</body>
+</html>
