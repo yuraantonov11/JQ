@@ -13,7 +13,6 @@
         p:first-child{
             background-color: chartreuse;
         }
-        p
     </style>
 </head>
 <body>
@@ -21,6 +20,8 @@
 <p>Lorem ipsum dolor.</p>
 <p>Lorem ipsum dolor.</p>
 <p>Lorem ipsum dolor.</p>
+<button class="btn1">hide first element</button>
+<button class="btn2">hide second element</button>
 
 <script src="main.js"></script>
 <script>
@@ -42,6 +43,12 @@
     });
     $('p').click(function(elem) {
         console.log(elem.hide());
+    });
+    $('.btn1').click(function (elem) {
+        console.log(234);
+    });
+    $('.btn2').click(function (elem) {
+        console.log(123213123);
     });
     //    $('p').click(function (event) {
     //        let target = event.target;
