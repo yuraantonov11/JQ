@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <style>
+        .red{
+            color: red;
+        }
+        p{
+            background-color: aqua;
+        }
+        p:first-child{
+            background-color: chartreuse;
+        }
+    </style>
 </head>
 <body>
 <p>Lorem ipsum dolor.</p>
 <p>Lorem ipsum dolor.</p>
 <p>Lorem ipsum dolor.</p>
 <p>Lorem ipsum dolor.</p>
+<button class="btn1">hide first element</button>
+<button class="btn2">hide second element</button>
 
 <script src="main.js"></script>
 <script>
 
-    // $('p').click(function(element) {
-    //     console.log(this);
-    //     console.log(element);
-    //     // $(this); === element
-    //     element.style.display = 'none';
-    //     element.style.backgroundColor = 'red';
-    //     element.style.color = 'green';
-    //     element.innerHTML = 'clicked';
-    // });
-    $('p').click(function(elem) {
-        console.log(elem.css('fontSize'));
-    })
-
-    // document.body.addEventListener('click', function(event) {
-    //     let target = event.target;
-    //     if(target.tagName === 'P'){
-    //         target.style.display = 'none';
-    //         return;
-    //     }
-    // })
+//    $('p').click(function(elem) {
+//        console.log(elem.css('backgroundColor'));
+//    });
+//    $('p').click(function(elem) {
+//        console.log(elem.addClass('red'));
+//    });
+//    $('p').click(function(elem) {
+//        console.log(elem.hide());
+//    });
+//    $('.btn1').click(function (elem) {
+//        console.log(234);
+//    });
+//    $('.btn2').click(function (elem) {
+//        console.log(123213123);
+//    });
 </script>
 </body>
 </html>
