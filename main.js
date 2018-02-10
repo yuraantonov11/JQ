@@ -2,12 +2,9 @@ class JQuery {
     constructor(query){
         this.selector = query;
         if(JQuery.isElement(query)){
-            this.elements = query
+            this.elements = [query]
         } else {
             this.elements = [...document.querySelectorAll(this.selector)];
-        }
-        if(this.elements.length === 1){
-            this.elements = this.elements[0];
         }
         this.length = this.elements.length || 0;
     }
@@ -19,11 +16,10 @@ class JQuery {
     }
 
     hide(){
-        this.elements.style.display = 'none';
-        // this.elements.map(function(elem) {
-        //     elem.style.display = 'none';
-        // });
-        // return this;
+        this.elements.map(function(elem) {
+            elem.style.display = 'none';
+        });
+        return this;
     }
     show(){
         this.elements.map(function(elem) {
@@ -52,19 +48,27 @@ class JQuery {
     }
 
     css(params){
+        let toReturn;
         if(arguments.length === 1){
-            return getComputedStyle(this.elements)[params];
+            this.elements.forEach(elem => {
+                toReturn = getComputedStyle(elem)[params]
+            });
+        } else {
+            toReturn = 2
         }
+        return toReturn;
     }
 
     addClass(newClass){
-        this.elements.classList.add(newClass);
+        const classArray = newClass.split(' ');
+        this.elements.forEach(elem => elem.classList.add(...classArray));
+        return this;
     }
-
-
 }
 
 const $ = function(selector) {
     return new JQuery(selector)
 };
+
+window.$ = $;
 
